@@ -1,0 +1,35 @@
+2020-09-15
+	CMN_Layout.cs 생성
+		ControlLayout Class
+			MakeCurvedBorder(Control ctrl, int curvedAmount_X, int curvedAmount_Y)
+				Control의 테두리를 둥글게 만드는 함수
+	FRM_KeyBoardUI
+	FRM_NumPadUI
+		배경 이미지 할당
+		버튼에 이미지를 할당
+		Text 필드를 이용시 이미지와 Text가 겹쳐 보기 안좋으므로 Tag 필드를 이용하도록 수정
+		(Right Shift 미완료, Exit 버튼 추가 필요)
+
+2020-09-16
+	FRM_KeyBoardUI
+	FRM_NumPadUI
+		Right Shift 추가 완료
+		Exit 추가 완료
+	CMN_Layout
+		ControlLayout Class
+			Control_Sizing, Control_Positioning 함수 생성
+			(폼 화면의 비율에 맞게 컨트롤의 크기, 위치값을 조절하는 함수)
+		FormLayout Class
+			MakeCurvedBorder(Form frm, int curvedAmount_X, int curvedAmount_Y)
+				Form의 테두리를 둥글게 만드는 함수
+	FRM_MessageBox 생성
+		커스텀 MessageBox 사용
+		(Normal 모드와 OkCancel 모드 2개를 구현함)
+		화면 크기에 맞춘 크기, 위치 조절 완료
+	FRM_Login
+		1차적인 이미지 적용 완료
+		화면 크기에 맞춘 크기, 위치 조절 완료
+
+	FRM_Main, FRM_Process도 화면에 맞춰 크기 조절을 할 수 있도록 수정해야함
+	(Main의 경우 Mdi Container의 크기 수정을 위한 함수를 FormLayout Class에 추가해야함)
+	(KeyBoard와 NumPad도 할 수 있으면 좋겠지만 노가다가 동반될 것임)

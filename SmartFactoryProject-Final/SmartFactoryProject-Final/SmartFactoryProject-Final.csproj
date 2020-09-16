@@ -47,11 +47,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\CMN_DB_Connect.cs" />
+    <Compile Include="Common\CMN_Layout.cs" />
     <Compile Include="Common\FRM_KeyBoardUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Common\FRM_KeyBoardUI.Designer.cs">
       <DependentUpon>FRM_KeyBoardUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\FRM_MessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\FRM_MessageBox.Designer.cs">
+      <DependentUpon>FRM_MessageBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\FRM_NumPadUI.cs">
       <SubType>Form</SubType>
@@ -84,6 +91,9 @@
     <EmbeddedResource Include="Common\FRM_KeyBoardUI.resx">
       <DependentUpon>FRM_KeyBoardUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Common\FRM_MessageBox.resx">
+      <DependentUpon>FRM_MessageBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Common\FRM_NumPadUI.resx">
       <DependentUpon>FRM_NumPadUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +114,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -23,7 +23,27 @@ namespace SmartFactoryProject_Final
 
         private void Frm_Login_Load(object sender, EventArgs e)
         {
-        
+            SetLayout();
+        }
+
+        private void SetLayout()
+        {
+            FormLayout frmLayout = new FormLayout();
+            frmLayout.MakeCurvedBorder(this, 18, 18);
+            ControlLayout ctrlLayout = new ControlLayout();
+            ctrlLayout.Control_Sizing(Lbl_ID, this.Size, 0.1f, 0.1f);
+            ctrlLayout.Control_Positioning(Lbl_ID, this.Size, 0.1f, 0.4f);
+            ctrlLayout.Control_Sizing(Lbl_PW, this.Size, 0.1f, 0.1f);
+            ctrlLayout.Control_Positioning(Lbl_PW, this.Size, 0.1f, 0.6f);
+            ctrlLayout.Control_Sizing(Txt_ID, this.Size, 0.5f, 0.1f);
+            ctrlLayout.Control_Positioning(Txt_ID, this.Size, 0.2f, 0.4f, ControlLayout.HorizontalSiding.Left);
+            ctrlLayout.Control_Sizing(Txt_PW, this.Size, 0.5f, 0.1f);
+            ctrlLayout.Control_Positioning(Txt_PW, this.Size, 0.2f, 0.6f, ControlLayout.HorizontalSiding.Left);
+            ctrlLayout.Control_Sizing(Btn_LogIn, this.Size, 0.2f, 0.4f);
+            ctrlLayout.Control_Positioning(Btn_LogIn, this.Size, 0.85f, 0.5f);
+            ctrlLayout.Control_Sizing(Btn_Exit, this.Size, 0.2f, 0.15f);
+            ctrlLayout.Control_Positioning(Btn_Exit, this.Size, 0.85f, 0.85f);
+            ctrlLayout.MakeCurvedBorder(Btn_Exit, 18, 18);
         }
 
         private void Txt_ID_Click(object sender, EventArgs e)
@@ -44,7 +64,7 @@ namespace SmartFactoryProject_Final
         {
             if (!IsLoginInfoValid())
             {
-                MessageBox.Show("ID와 PW를 모두 입력해 주세요");
+                FRM_MessageBox.Show("ID와 PW를 모두 입력해 주세요", "로그인 실패");
                 return;
             }
 
@@ -84,7 +104,29 @@ namespace SmartFactoryProject_Final
             }
             else
             {
-                MessageBox.Show("입력하신 ID 또는 PW가 맞지 않습니다");
+                FRM_MessageBox.Show("입력하신 ID 또는 PW가 맞지 않습니다", "로그인 실패");
+            }
+        }
+
+        private void Btn_Exit_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        int xPos { get; set; }
+        int yPos { get; set; }
+        private void Pnl_Drag_MouseDown(object sender, MouseEventArgs e)
+        {
+            xPos = e.X;
+            yPos = e.Y;
+        }
+        private void Pnl_Drag_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Location = new Point(this.Location.X + e.X - xPos,
+                                          this.Location.Y + e.Y - yPos);
             }
         }
     }

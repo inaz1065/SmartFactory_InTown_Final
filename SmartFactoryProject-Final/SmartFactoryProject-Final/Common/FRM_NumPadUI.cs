@@ -23,16 +23,55 @@ namespace SmartFactoryProject_Final.Common
             if (inputPassword)
                 Txt_Input.PasswordChar = '●';
         }
-
-        [DllImport("gdi32.dll")]
-        private static extern IntPtr CreateRoundRectRgn(int x1, int y1, int x2, int y2, int cx, int cy);
-        [DllImport("user32.dll")]
-        private static extern int SetWindowRgn(IntPtr hWnd, IntPtr hRgn, bool bRedraw);
+        
         private void Frm_NumPadUI_Load(object sender, EventArgs e)
         {
-            // 종료 버튼의 테두리를 둥글게 만들기
-            IntPtr ip = CreateRoundRectRgn(0, 0, Btn_Key_EXIT.Width, Btn_Key_EXIT.Height, 15, 15);
-            int i = SetWindowRgn(Btn_Key_EXIT.Handle, ip, true);
+            GetKeyImages();
+
+            List<Button> btnList = new List<Button>();
+            btnList.Add(Btn_Key_1);
+            btnList.Add(Btn_Key_2);
+            btnList.Add(Btn_Key_3);
+            btnList.Add(Btn_Key_4);
+            btnList.Add(Btn_Key_5);
+            btnList.Add(Btn_Key_6);
+            btnList.Add(Btn_Key_7);
+            btnList.Add(Btn_Key_8);
+            btnList.Add(Btn_Key_9);
+            btnList.Add(Btn_Key_0);
+            btnList.Add(Btn_Key_BackSpace);
+            btnList.Add(Btn_Key_Enter);
+
+            ControlLayout ctrlLayout = new ControlLayout();
+            foreach(Button btn in btnList)
+            {
+                btn.Text = "";
+                ctrlLayout.MakeCurvedBorder(btn, 18, 18);
+            }
+            Btn_Exit.Text = "";
+            ctrlLayout.MakeCurvedBorder(Btn_Exit, 8, 8);
+        }
+
+        private void GetKeyImages()
+        {
+            IniFile ini = new IniFile();
+            ini.Load(IniData.SettingIniFile);
+            IniSection resSect = ini["Resources"];
+            string keyPadResPath = System.IO.Directory.GetCurrentDirectory() + $@"{resSect["ResourceFolder"]}{resSect["KeyPadFolder"]}";
+
+            Btn_Key_1.BackgroundImage = Image.FromFile(keyPadResPath + @"\n1.png");
+            Btn_Key_2.BackgroundImage = Image.FromFile(keyPadResPath + @"\n2.png");
+            Btn_Key_3.BackgroundImage = Image.FromFile(keyPadResPath + @"\n3.png");
+            Btn_Key_4.BackgroundImage = Image.FromFile(keyPadResPath + @"\n4.png");
+            Btn_Key_5.BackgroundImage = Image.FromFile(keyPadResPath + @"\n5.png");
+            Btn_Key_6.BackgroundImage = Image.FromFile(keyPadResPath + @"\n6.png");
+            Btn_Key_7.BackgroundImage = Image.FromFile(keyPadResPath + @"\n7.png");
+            Btn_Key_8.BackgroundImage = Image.FromFile(keyPadResPath + @"\n8.png");
+            Btn_Key_9.BackgroundImage = Image.FromFile(keyPadResPath + @"\n9.png");
+            Btn_Key_0.BackgroundImage = Image.FromFile(keyPadResPath + @"\n0.png");
+            Btn_Key_BackSpace.BackgroundImage = Image.FromFile(keyPadResPath + @"\n_arrow.png");
+            Btn_Key_Enter.BackgroundImage = Image.FromFile(keyPadResPath + @"\n_enter.png");
+            Btn_Exit.BackgroundImage = Image.FromFile(keyPadResPath + @"\n_exit.png");
         }
 
         private void Btn_Key_Click(object sender, EventArgs e)
@@ -40,7 +79,7 @@ namespace SmartFactoryProject_Final.Common
             if (Txt_Input.Text.Length < MaxTextLength)
             {
                 Button btnClicked = sender as Button;
-                Txt_Input.Text += btnClicked.Text;
+                Txt_Input.Text += (string)btnClicked.Tag;
             }
         }
 

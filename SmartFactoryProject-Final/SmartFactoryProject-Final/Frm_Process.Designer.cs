@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.Lbl_CurrentTime = new System.Windows.Forms.Label();
+            this.Lbl_Order = new System.Windows.Forms.Label();
+            this.Lbl_Proc = new System.Windows.Forms.Label();
+            this.Lbl_ItemCode = new System.Windows.Forms.Label();
+            this.Lbl_ItemName = new System.Windows.Forms.Label();
+            this.Lbl_TotalAmount = new System.Windows.Forms.Label();
+            this.Lbl_NormalAmount = new System.Windows.Forms.Label();
+            this.Lbl_DefectAmount = new System.Windows.Forms.Label();
             this.Txt_DefectAmount = new System.Windows.Forms.TextBox();
             this.Txt_NormalAmount = new System.Windows.Forms.TextBox();
             this.Txt_TotalAmount = new System.Windows.Forms.TextBox();
@@ -48,84 +48,84 @@
             this.Txt_CurrentTime = new System.Windows.Forms.TextBox();
             this.Tim_PerSec = new System.Windows.Forms.Timer(this.components);
             this.Btn_OrderStart = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.Lbl_Dies = new System.Windows.Forms.Label();
             this.Pic_Dies = new System.Windows.Forms.PictureBox();
             this.Txt_TargetAmount = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.Lbl_TargetAmount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Dies)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // Lbl_CurrentTime
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "현재 시각";
+            this.Lbl_CurrentTime.AutoSize = true;
+            this.Lbl_CurrentTime.Location = new System.Drawing.Point(50, 55);
+            this.Lbl_CurrentTime.Name = "Lbl_CurrentTime";
+            this.Lbl_CurrentTime.Size = new System.Drawing.Size(72, 15);
+            this.Lbl_CurrentTime.TabIndex = 0;
+            this.Lbl_CurrentTime.Text = "현재 시각";
             // 
-            // label2
+            // Lbl_Order
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(53, 125);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "작업지시";
+            this.Lbl_Order.AutoSize = true;
+            this.Lbl_Order.Location = new System.Drawing.Point(53, 125);
+            this.Lbl_Order.Name = "Lbl_Order";
+            this.Lbl_Order.Size = new System.Drawing.Size(67, 15);
+            this.Lbl_Order.TabIndex = 1;
+            this.Lbl_Order.Text = "작업지시";
             // 
-            // label3
+            // Lbl_Proc
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(465, 125);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "공정 및 기기";
+            this.Lbl_Proc.AutoSize = true;
+            this.Lbl_Proc.Location = new System.Drawing.Point(465, 125);
+            this.Lbl_Proc.Name = "Lbl_Proc";
+            this.Lbl_Proc.Size = new System.Drawing.Size(92, 15);
+            this.Lbl_Proc.TabIndex = 2;
+            this.Lbl_Proc.Text = "공정 및 기기";
             // 
-            // label5
+            // Lbl_ItemCode
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(68, 165);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 15);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "품번";
+            this.Lbl_ItemCode.AutoSize = true;
+            this.Lbl_ItemCode.Location = new System.Drawing.Point(68, 165);
+            this.Lbl_ItemCode.Name = "Lbl_ItemCode";
+            this.Lbl_ItemCode.Size = new System.Drawing.Size(37, 15);
+            this.Lbl_ItemCode.TabIndex = 4;
+            this.Lbl_ItemCode.Text = "품번";
             // 
-            // label6
+            // Lbl_ItemName
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(68, 205);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 15);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "품명";
+            this.Lbl_ItemName.AutoSize = true;
+            this.Lbl_ItemName.Location = new System.Drawing.Point(68, 205);
+            this.Lbl_ItemName.Name = "Lbl_ItemName";
+            this.Lbl_ItemName.Size = new System.Drawing.Size(37, 15);
+            this.Lbl_ItemName.TabIndex = 5;
+            this.Lbl_ItemName.Text = "품명";
             // 
-            // label7
+            // Lbl_TotalAmount
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(48, 283);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 15);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "총 생산량";
+            this.Lbl_TotalAmount.AutoSize = true;
+            this.Lbl_TotalAmount.Location = new System.Drawing.Point(48, 283);
+            this.Lbl_TotalAmount.Name = "Lbl_TotalAmount";
+            this.Lbl_TotalAmount.Size = new System.Drawing.Size(72, 15);
+            this.Lbl_TotalAmount.TabIndex = 6;
+            this.Lbl_TotalAmount.Text = "총 생산량";
             // 
-            // label8
+            // Lbl_NormalAmount
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(247, 253);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(57, 15);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "양품 수";
+            this.Lbl_NormalAmount.AutoSize = true;
+            this.Lbl_NormalAmount.Location = new System.Drawing.Point(247, 253);
+            this.Lbl_NormalAmount.Name = "Lbl_NormalAmount";
+            this.Lbl_NormalAmount.Size = new System.Drawing.Size(57, 15);
+            this.Lbl_NormalAmount.TabIndex = 7;
+            this.Lbl_NormalAmount.Text = "양품 수";
             // 
-            // label9
+            // Lbl_DefectAmount
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(232, 283);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 15);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "불량품 수";
+            this.Lbl_DefectAmount.AutoSize = true;
+            this.Lbl_DefectAmount.Location = new System.Drawing.Point(232, 283);
+            this.Lbl_DefectAmount.Name = "Lbl_DefectAmount";
+            this.Lbl_DefectAmount.Size = new System.Drawing.Size(72, 15);
+            this.Lbl_DefectAmount.TabIndex = 8;
+            this.Lbl_DefectAmount.Text = "불량품 수";
             // 
             // Txt_DefectAmount
             // 
@@ -213,14 +213,14 @@
             this.Btn_OrderStart.Text = "작업개시";
             this.Btn_OrderStart.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // Lbl_Dies
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(520, 165);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 15);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "금형";
+            this.Lbl_Dies.AutoSize = true;
+            this.Lbl_Dies.Location = new System.Drawing.Point(520, 165);
+            this.Lbl_Dies.Name = "Lbl_Dies";
+            this.Lbl_Dies.Size = new System.Drawing.Size(37, 15);
+            this.Lbl_Dies.TabIndex = 19;
+            this.Lbl_Dies.Text = "금형";
             // 
             // Pic_Dies
             // 
@@ -238,24 +238,24 @@
             this.Txt_TargetAmount.Size = new System.Drawing.Size(100, 25);
             this.Txt_TargetAmount.TabIndex = 22;
             // 
-            // label10
+            // Lbl_TargetAmount
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(33, 253);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 15);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "목표 생산량";
+            this.Lbl_TargetAmount.AutoSize = true;
+            this.Lbl_TargetAmount.Location = new System.Drawing.Point(33, 253);
+            this.Lbl_TargetAmount.Name = "Lbl_TargetAmount";
+            this.Lbl_TargetAmount.Size = new System.Drawing.Size(87, 15);
+            this.Lbl_TargetAmount.TabIndex = 21;
+            this.Lbl_TargetAmount.Text = "목표 생산량";
             // 
-            // Frm_Process
+            // FRM_Process
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1258, 973);
             this.Controls.Add(this.Txt_TargetAmount);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.Lbl_TargetAmount);
             this.Controls.Add(this.Pic_Dies);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Lbl_Dies);
             this.Controls.Add(this.Btn_OrderStart);
             this.Controls.Add(this.Txt_CurrentTime);
             this.Controls.Add(this.Cmb_Machine);
@@ -266,18 +266,18 @@
             this.Controls.Add(this.Txt_TotalAmount);
             this.Controls.Add(this.Txt_NormalAmount);
             this.Controls.Add(this.Txt_DefectAmount);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Lbl_DefectAmount);
+            this.Controls.Add(this.Lbl_NormalAmount);
+            this.Controls.Add(this.Lbl_TotalAmount);
+            this.Controls.Add(this.Lbl_ItemName);
+            this.Controls.Add(this.Lbl_ItemCode);
+            this.Controls.Add(this.Lbl_Proc);
+            this.Controls.Add(this.Lbl_Order);
+            this.Controls.Add(this.Lbl_CurrentTime);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Frm_Process";
+            this.Name = "FRM_Process";
             this.Text = "Frm_Process";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_Process_Load);
@@ -289,14 +289,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label Lbl_CurrentTime;
+        private System.Windows.Forms.Label Lbl_Order;
+        private System.Windows.Forms.Label Lbl_Proc;
+        private System.Windows.Forms.Label Lbl_ItemCode;
+        private System.Windows.Forms.Label Lbl_ItemName;
+        private System.Windows.Forms.Label Lbl_TotalAmount;
+        private System.Windows.Forms.Label Lbl_NormalAmount;
+        private System.Windows.Forms.Label Lbl_DefectAmount;
         private System.Windows.Forms.TextBox Txt_DefectAmount;
         private System.Windows.Forms.TextBox Txt_NormalAmount;
         private System.Windows.Forms.TextBox Txt_TotalAmount;
@@ -308,9 +308,9 @@
         private System.Windows.Forms.TextBox Txt_CurrentTime;
         private System.Windows.Forms.Timer Tim_PerSec;
         private System.Windows.Forms.Button Btn_OrderStart;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label Lbl_Dies;
         private System.Windows.Forms.PictureBox Pic_Dies;
         private System.Windows.Forms.TextBox Txt_TargetAmount;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label Lbl_TargetAmount;
     }
 }

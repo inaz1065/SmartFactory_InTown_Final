@@ -13,6 +13,7 @@ namespace SmartFactoryProject_Final
 {
     public partial class FRM_Main : Form
     {
+        Form mdiForm { get; set; }
         FRM_Process frm_process { get; set; }
 
         public FRM_Main()
@@ -53,7 +54,7 @@ namespace SmartFactoryProject_Final
                 this.Opacity = 0;
                 Reset();
                 LogIn(FRM_LogIn.LoginMode.ExitWhenFailed);
-                if (this.IsDisposed)
+                if (this.IsDisposed)    // Login 함수의 결과로 이 폼이 Close될 경우 DisPose되므로 
                     return;
                 Initialize();
                 this.Opacity = 100;
@@ -63,21 +64,21 @@ namespace SmartFactoryProject_Final
 
         private void Reset()
         {
-            if (frm_process != null)
+            if (mdiForm != null)
             {
-                frm_process.Close();
-                frm_process = null;
+                mdiForm.Hide();
             }
         }
         private void Initialize()
         {
-
+            mdiForm.Show();
         }
 
         private void Btn_Process_Click(object sender, EventArgs e)
         {
             if (frm_process == null)
                 frm_process = new FRM_Process(this);
+            mdiForm = frm_process;
             frm_process.Show();
         }
     }

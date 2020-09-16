@@ -22,3 +22,4 @@ C:\Users\admin\Documents\Visual Studio 2015\Projects\SmartFactoryProject-Final\S
 C:\Users\admin\Documents\Visual Studio 2015\Projects\SmartFactoryProject-Final\SmartFactoryProject-Final\obj\Debug\SmartFactoryProject_Final.Frm_LogIn.resources
 C:\Users\admin\Documents\Visual Studio 2015\Projects\SmartFactoryProject-Final\SmartFactoryProject-Final\obj\Debug\SmartFactoryProject_Final.Frm_Main.resources
 C:\Users\admin\Documents\Visual Studio 2015\Projects\SmartFactoryProject-Final\SmartFactoryProject-Final\obj\Debug\SmartFactoryProject_Final.Frm_Process.resources
+C:\Users\admin\Documents\Visual Studio 2015\Projects\SmartFactoryProject-Final\SmartFactoryProject-Final\obj\Debug\SmartFactoryProject_Final.Common.FRM_MessageBox.resources

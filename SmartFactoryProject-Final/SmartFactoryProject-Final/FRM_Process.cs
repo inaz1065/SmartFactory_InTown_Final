@@ -70,7 +70,7 @@ namespace SmartFactoryProject_Final
         /// <summary>
         /// DB로부터 작업지시 목록을 가져와 ComboBox에 할당하는 함수
         /// 완료되지 않은 품목에 대해서만 출력한다
-        /// (생산이 일부만 이뤄진 경우에 대해서 구분할 수단을 추가해야함)
+        /// (생산이 일부만 이뤄진 경우에 대해서 구분할 수단을 추가해야함) 
         /// </summary>
         private void LoadOrders()
         {
@@ -249,7 +249,7 @@ namespace SmartFactoryProject_Final
             else
             {
                 // 괄호 내 문장은 Txt_DefectAmount_Click 함수 내에 물품 생산 여부를 확인하는 코드가 들어가면 지워질 예정
-                MessageBox.Show("(생산 중이 아니거나 )입력한 불량품의 수가 너무 많습니다");
+                FRM_MessageBox.Show("(생산 중이 아니거나 )입력한 불량품의 수가 너무 많습니다", "잘못된 입력 확인");
                 Txt_DefectAmount.Text = "";
                 return;
             }
