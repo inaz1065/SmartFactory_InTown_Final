@@ -13,6 +13,7 @@ namespace SmartFactoryProject_Final
 {
     public partial class FRM_Main : Form
     {
+        public const float LeftPadding = 0.1f;
         public const float TopPadding = 0.15f;
 
         Form mdiForm { get; set; }
@@ -36,19 +37,31 @@ namespace SmartFactoryProject_Final
             IniSection resSect = ini["Resources"];
             IniSection equipSect = ini["Equipment"];
             string bgResPath = System.IO.Directory.GetCurrentDirectory() + $@"{resSect["ResourceFolder"]}{resSect["BGFolder"]}";
+            string textResPath = System.IO.Directory.GetCurrentDirectory() + $@"{resSect["ResourceFolder"]}{resSect["TextFolder"]}";
 
             this.Location = new Point(this.Left, 0);
             this.Size = new Size(int.Parse(equipSect["Width"].ToString()), int.Parse(equipSect["Height"].ToString()));
             ControlLayout ctrlLayout = new ControlLayout();
-            this.Padding = new Padding(0, ctrlLayout.GetYPosByRatio(this.Size, TopPadding), 0, 0);
+            this.Padding = new Padding(ctrlLayout.GetXPosByRatio(this.Size, LeftPadding), ctrlLayout.GetYPosByRatio(this.Size, TopPadding), 0, 0);
+
             Pnl_Drag.BackgroundImage = Image.FromFile(bgResPath + @"\bg_box2_NoBorder.png");
             ctrlLayout.Control_Sizing(Pnl_Drag, this.Size, 1, 0.15f);
+
             ctrlLayout.Control_Sizing(Btn_Process, this.Size, 0.075f, 0.05f);
-            ctrlLayout.Control_Positioning(Btn_Process, this.Size, 0.82f, 0.1f);
+            ctrlLayout.Control_Positioning(Btn_Process, this.Size, 0.05f, 0.2f);
+            Btn_Process.BackgroundImage = Image.FromFile(textResPath + @"\btn_s작업지시_nomal.png");
+            Btn_Process.Text = "";
+
             ctrlLayout.Control_Sizing(Btn_Logout, this.Size, 0.075f, 0.05f);
             ctrlLayout.Control_Positioning(Btn_Logout, this.Size, 0.9f, 0.1f);
+            Btn_Logout.BackgroundImage = Image.FromFile(textResPath + @"\Logout.png");
+            Btn_Logout.Text = "";
+
             ctrlLayout.Control_Sizing(Btn_Exit, this.Size, 0.05f, 0.05f);
-            ctrlLayout.Control_Positioning(Btn_Exit, this.Size, 1, 0.06f, ControlLayout.HorizontalSiding.Right);
+            ctrlLayout.Control_Positioning(Btn_Exit, this.Size, 1, 0.1f, ControlLayout.HorizontalSiding.Right);
+            Btn_Exit.BackgroundImage = Image.FromFile(textResPath + @"\Exit.png");
+            Btn_Exit.Text = "";
+
         }
 
         #region ---- Login & Logout

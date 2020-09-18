@@ -38,6 +38,8 @@
             // 
             // Btn_Logout
             // 
+            this.Btn_Logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Btn_Logout.Location = new System.Drawing.Point(1116, 53);
             this.Btn_Logout.Name = "Btn_Logout";
             this.Btn_Logout.Size = new System.Drawing.Size(80, 40);
@@ -48,7 +50,9 @@
             // 
             // Btn_Process
             // 
-            this.Btn_Process.Location = new System.Drawing.Point(1030, 53);
+            this.Btn_Process.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_Process.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Btn_Process.Location = new System.Drawing.Point(20, 123);
             this.Btn_Process.Name = "Btn_Process";
             this.Btn_Process.Size = new System.Drawing.Size(80, 40);
             this.Btn_Process.TabIndex = 2;
@@ -68,6 +72,8 @@
             // 
             // Btn_Exit
             // 
+            this.Btn_Exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Btn_Exit.Location = new System.Drawing.Point(1202, 3);
             this.Btn_Exit.Name = "Btn_Exit";
             this.Btn_Exit.Size = new System.Drawing.Size(75, 40);
@@ -81,7 +87,6 @@
             this.Pnl_Drag.BackColor = System.Drawing.Color.Transparent;
             this.Pnl_Drag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Pnl_Drag.Controls.Add(this.Btn_Exit);
-            this.Pnl_Drag.Controls.Add(this.Btn_Process);
             this.Pnl_Drag.Controls.Add(this.Btn_Logout);
             this.Pnl_Drag.Location = new System.Drawing.Point(0, 0);
             this.Pnl_Drag.Name = "Pnl_Drag";
@@ -96,12 +101,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 1024);
             this.Controls.Add(this.Pnl_Drag);
+            this.Controls.Add(this.Btn_Process);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FRM_Main";
-            this.Padding = new System.Windows.Forms.Padding(0, 96, 0, 0);
+            this.Padding = new System.Windows.Forms.Padding(128, 96, 0, 0);
             this.Text = "Frm_Main";
             this.Load += new System.EventHandler(this.Frm_Main_Load);
             this.Pnl_Drag.ResumeLayout(false);

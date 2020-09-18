@@ -32,37 +32,97 @@ namespace SmartFactoryProject_Final
             ini.Load(IniData.SettingIniFile);
             IniSection resSect = ini["Resources"];
             string bgResPath = System.IO.Directory.GetCurrentDirectory() + $@"{resSect["ResourceFolder"]}{resSect["BGFolder"]}";
-            
-            this.BackgroundImage = Image.FromFile(bgResPath + @"\bg_tabpage.png");
+            string textResPath = System.IO.Directory.GetCurrentDirectory() + $@"{resSect["ResourceFolder"]}{resSect["TextFolder"]}";
+
             ControlLayout ctrlLayout = new ControlLayout();
             ctrlLayout.MakeCurvedBorder(this, 18, 18);
-            ctrlLayout.Control_Sizing(Lbl_ID, this.Size, 0.1f, 0.1f);
-            ctrlLayout.Control_Positioning(Lbl_ID, this.Size, 0.1f, 0.4f);
-            ctrlLayout.Control_Sizing(Lbl_PW, this.Size, 0.1f, 0.1f);
-            ctrlLayout.Control_Positioning(Lbl_PW, this.Size, 0.1f, 0.6f);
+            this.BackgroundImage = Image.FromFile(bgResPath + @"\bg_tabpage.png");
+
+            ctrlLayout.Control_Sizing(Pnl_Drag, this.Size, 1, 0.2f);
+
+            ctrlLayout.Control_Sizing(Pic_Title, this.Size, 0.05f, 0.1f);
+            ctrlLayout.Control_Positioning(Pic_Title, this.Size, 0.1f, 0.2f);
+            Pic_Title.Load(textResPath + @"\In.png");
+
+            ctrlLayout.Control_Sizing(Lbl_Title, this.Size, 0.15f, 0.1f);
+            ctrlLayout.Control_Positioning(Lbl_Title, this.Size, 0.2f, 0.2f);
+
+            ctrlLayout.Control_Sizing(Pic_ID, this.Size, 0.1f, 0.15f);
+            ctrlLayout.Control_Positioning(Pic_ID, this.Size, 0.12f, 0.4f);
+            Pic_ID.Load(textResPath + @"\Key.png");
             ctrlLayout.Control_Sizing(Txt_ID, this.Size, 0.5f, 0.1f);
             ctrlLayout.Control_Positioning(Txt_ID, this.Size, 0.2f, 0.4f, ControlLayout.HorizontalSiding.Left);
+            
+
+            ctrlLayout.Control_Sizing(Pic_PW, this.Size, 0.1f, 0.15f);
+            ctrlLayout.Control_Positioning(Pic_PW, this.Size, 0.12f, 0.6f);
+            Pic_PW.Load(textResPath + @"\Lock.png");
             ctrlLayout.Control_Sizing(Txt_PW, this.Size, 0.5f, 0.1f);
             ctrlLayout.Control_Positioning(Txt_PW, this.Size, 0.2f, 0.6f, ControlLayout.HorizontalSiding.Left);
-            ctrlLayout.Control_Sizing(Btn_LogIn, this.Size, 0.2f, 0.4f);
-            ctrlLayout.Control_Positioning(Btn_LogIn, this.Size, 0.85f, 0.5f);
-            ctrlLayout.Control_Sizing(Btn_Exit, this.Size, 0.2f, 0.15f);
-            ctrlLayout.Control_Positioning(Btn_Exit, this.Size, 0.85f, 0.85f);
+            
+
+            ctrlLayout.Control_Sizing(Btn_LogIn, this.Size, 0.2f, 0.15f);
+            ctrlLayout.Control_Positioning(Btn_LogIn, this.Size, 0.5f, 0.85f);
+            Btn_LogIn.Text = "";
+            Btn_LogIn.BackgroundImage = Image.FromFile(textResPath + @"\Login.png");
+            ctrlLayout.MakeCurvedBorder(Btn_LogIn, 18, 18);
+
+            ctrlLayout.Control_Sizing(Btn_Exit, this.Size, 0.15f, 0.15f);
+            ctrlLayout.Control_Positioning(Btn_Exit, this.Size, 0.9f, 0.1f);
+            Btn_Exit.BackgroundImage = Image.FromFile(textResPath + @"\Exit.png");
             ctrlLayout.MakeCurvedBorder(Btn_Exit, 18, 18);
+        }
+
+        private void ResetTxt_ID()
+        {
+            Txt_ID.Text = "User ID";
+            Txt_ID.ForeColor = Color.LightGray;
+        }
+
+        private void ResetTxt_PW()
+        {
+            Txt_PW.Text = "Password";
+            Txt_PW.ForeColor = Color.LightGray;
+        }
+
+        private void SetTxt_ID(string text)
+        {
+            Txt_ID.Text = text;
+            Txt_ID.ForeColor = Color.Black;
+        }
+
+        private void SetTxt_PW(string text)
+        {
+            Txt_PW.Text = text;
+            Txt_PW.ForeColor = Color.Black;
         }
 
         private void Txt_ID_Click(object sender, EventArgs e)
         {
-            FRM_KeyBoardUI keyBoardUI = new FRM_KeyBoardUI("ID", Txt_ID.Text);
+            string text = (Txt_ID.ForeColor == Color.LightGray) ? "" : Txt_ID.Text;
+            FRM_KeyBoardUI keyBoardUI = new FRM_KeyBoardUI("ID", text);
             if (keyBoardUI.ShowDialog() == DialogResult.OK)
-                Txt_ID.Text = keyBoardUI.GetInputText();
+            {
+                string inputText = keyBoardUI.GetInputText();
+                if (!string.IsNullOrEmpty(inputText))
+                    SetTxt_ID(inputText);
+                else
+                    ResetTxt_ID();
+            }
         }
 
         private void Txt_PW_Click(object sender, EventArgs e)
         {
-            FRM_KeyBoardUI keyBoardUI = new FRM_KeyBoardUI("PW", Txt_PW.Text, true);
+            string text = (Txt_PW.ForeColor == Color.LightGray) ? "" : Txt_PW.Text;
+            FRM_KeyBoardUI keyBoardUI = new FRM_KeyBoardUI("PW", text, true);
             if (keyBoardUI.ShowDialog() == DialogResult.OK)
-                Txt_PW.Text = keyBoardUI.GetInputText();
+            {
+                string inputText = keyBoardUI.GetInputText();
+                if (!string.IsNullOrEmpty(inputText))
+                    SetTxt_PW(inputText);
+                else
+                    ResetTxt_PW();
+            }
         }
 
         private void Btn_LogIn_Click(object sender, EventArgs e)
@@ -101,15 +161,19 @@ namespace SmartFactoryProject_Final
             command.Parameters.Add(paramPW);
 
             DBConnect dbConnect = new DBConnect();
-            DataSet loginData = dbConnect.Search(command);
-            if (loginData != null)
+            DataSet loginData;
+            bool result = dbConnect.Search(command, out loginData);
+            if (result && loginData != null)
             {
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else
             {
-                FRM_MessageBox.Show("입력하신 ID 또는 PW가 맞지 않습니다", "로그인 실패");
+                if(result && loginData == null)
+                    FRM_MessageBox.Show("입력하신 ID 또는 PW가 맞지 않습니다", "로그인 실패");
+                else
+                    FRM_MessageBox.Show("로그인 DB의 접속에 실패했습니다", "로그인 실패");
             }
         }
 

@@ -35,17 +35,21 @@ namespace SmartFactoryProject_Final.Common
         /// 주어진 쿼리문을 실행해 그 결과를 DataSet으로 리턴하는 함수
         /// </summary>
         /// <param name="commandText">입력 쿼리문</param>
-        public DataSet Search(string commandText)
+        /// <param name="dataset">출력 DataSet</param>
+        /// <returns>통신이 정상적으로 이루어졌는지의 여부</returns>
+        public bool Search(string commandText, out DataSet dataset)
         {
             SqlCommand command = new SqlCommand(commandText);
-            return Search(command);
+            return Search(command, out dataset);
         }
 
         /// <summary>
         /// SqlCommand를 실행해 그 결과를 DataSet으로 리턴하는 함수
         /// </summary>
         /// <param name="command">입력 SqlCommand</param>
-        public DataSet Search(SqlCommand command)
+        /// <param name="dataset">출력 DataSet</param>
+        /// <returns>통신이 정상적으로 이루어졌는지의 여부</returns>
+        public bool Search(SqlCommand command, out DataSet dataset)
         {
             SqlConnection connection = null;
             DataSet result = null;
@@ -67,9 +71,9 @@ namespace SmartFactoryProject_Final.Common
                 }
 
                 if (result.Tables[0].Rows.Count > 0)
-                    return result;
+                    dataset = result;
                 else
-                    return null;
+                    dataset = null;
             }
             catch (Exception excep)
             {
@@ -79,8 +83,10 @@ namespace SmartFactoryProject_Final.Common
                                                command.Connection.ConnectionString, Environment.NewLine,
                                                command.CommandText);
                 Log.WriteLog(Log.LogType.Error, className, funcName, logText);
-                return null;
+                dataset = null;
+                return false;
             }
+            return true;
         }
 
         /// <summary>

@@ -30,13 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.Lbl_CurrentTime = new System.Windows.Forms.Label();
-            this.Lbl_Order = new System.Windows.Forms.Label();
-            this.Lbl_Proc = new System.Windows.Forms.Label();
-            this.Lbl_ItemCode = new System.Windows.Forms.Label();
-            this.Lbl_ItemName = new System.Windows.Forms.Label();
-            this.Lbl_TotalAmount = new System.Windows.Forms.Label();
-            this.Lbl_NormalAmount = new System.Windows.Forms.Label();
-            this.Lbl_DefectAmount = new System.Windows.Forms.Label();
             this.Txt_DefectAmount = new System.Windows.Forms.TextBox();
             this.Txt_NormalAmount = new System.Windows.Forms.TextBox();
             this.Txt_TotalAmount = new System.Windows.Forms.TextBox();
@@ -48,13 +41,29 @@
             this.Txt_CurrentTime = new System.Windows.Forms.TextBox();
             this.Tim_PerSec = new System.Windows.Forms.Timer(this.components);
             this.Btn_OrderStart = new System.Windows.Forms.Button();
-            this.Lbl_Dies = new System.Windows.Forms.Label();
             this.Pic_Dies = new System.Windows.Forms.PictureBox();
             this.Txt_TargetAmount = new System.Windows.Forms.TextBox();
-            this.Lbl_TargetAmount = new System.Windows.Forms.Label();
             this.Tim_Per3Sec = new System.Windows.Forms.Timer(this.components);
             this.Tab_Data = new System.Windows.Forms.TabControl();
+            this.Pic_Order = new System.Windows.Forms.PictureBox();
+            this.Pic_ItemCode = new System.Windows.Forms.PictureBox();
+            this.Pic_ItemName = new System.Windows.Forms.PictureBox();
+            this.Pic_Proc = new System.Windows.Forms.PictureBox();
+            this.Pic_TargetAmount = new System.Windows.Forms.PictureBox();
+            this.Pic_TotalAmount = new System.Windows.Forms.PictureBox();
+            this.Pic_NormalAmount = new System.Windows.Forms.PictureBox();
+            this.Pic_DefectAmount = new System.Windows.Forms.PictureBox();
+            this.Pic_DieLbl = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Dies)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_Order)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_ItemCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_ItemName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_Proc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_TargetAmount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_TotalAmount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_NormalAmount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_DefectAmount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_DieLbl)).BeginInit();
             this.SuspendLayout();
             // 
             // Lbl_CurrentTime
@@ -66,76 +75,6 @@
             this.Lbl_CurrentTime.Size = new System.Drawing.Size(72, 15);
             this.Lbl_CurrentTime.TabIndex = 0;
             this.Lbl_CurrentTime.Text = "현재 시각";
-            // 
-            // Lbl_Order
-            // 
-            this.Lbl_Order.AutoSize = true;
-            this.Lbl_Order.BackColor = System.Drawing.Color.Transparent;
-            this.Lbl_Order.Location = new System.Drawing.Point(153, 202);
-            this.Lbl_Order.Name = "Lbl_Order";
-            this.Lbl_Order.Size = new System.Drawing.Size(67, 15);
-            this.Lbl_Order.TabIndex = 1;
-            this.Lbl_Order.Text = "작업지시";
-            // 
-            // Lbl_Proc
-            // 
-            this.Lbl_Proc.AutoSize = true;
-            this.Lbl_Proc.BackColor = System.Drawing.Color.Transparent;
-            this.Lbl_Proc.Location = new System.Drawing.Point(565, 202);
-            this.Lbl_Proc.Name = "Lbl_Proc";
-            this.Lbl_Proc.Size = new System.Drawing.Size(92, 15);
-            this.Lbl_Proc.TabIndex = 2;
-            this.Lbl_Proc.Text = "공정 및 기기";
-            // 
-            // Lbl_ItemCode
-            // 
-            this.Lbl_ItemCode.AutoSize = true;
-            this.Lbl_ItemCode.BackColor = System.Drawing.Color.Transparent;
-            this.Lbl_ItemCode.Location = new System.Drawing.Point(168, 242);
-            this.Lbl_ItemCode.Name = "Lbl_ItemCode";
-            this.Lbl_ItemCode.Size = new System.Drawing.Size(37, 15);
-            this.Lbl_ItemCode.TabIndex = 4;
-            this.Lbl_ItemCode.Text = "품번";
-            // 
-            // Lbl_ItemName
-            // 
-            this.Lbl_ItemName.AutoSize = true;
-            this.Lbl_ItemName.BackColor = System.Drawing.Color.Transparent;
-            this.Lbl_ItemName.Location = new System.Drawing.Point(168, 282);
-            this.Lbl_ItemName.Name = "Lbl_ItemName";
-            this.Lbl_ItemName.Size = new System.Drawing.Size(37, 15);
-            this.Lbl_ItemName.TabIndex = 5;
-            this.Lbl_ItemName.Text = "품명";
-            // 
-            // Lbl_TotalAmount
-            // 
-            this.Lbl_TotalAmount.AutoSize = true;
-            this.Lbl_TotalAmount.BackColor = System.Drawing.Color.Transparent;
-            this.Lbl_TotalAmount.Location = new System.Drawing.Point(148, 360);
-            this.Lbl_TotalAmount.Name = "Lbl_TotalAmount";
-            this.Lbl_TotalAmount.Size = new System.Drawing.Size(72, 15);
-            this.Lbl_TotalAmount.TabIndex = 6;
-            this.Lbl_TotalAmount.Text = "총 생산량";
-            // 
-            // Lbl_NormalAmount
-            // 
-            this.Lbl_NormalAmount.AutoSize = true;
-            this.Lbl_NormalAmount.BackColor = System.Drawing.Color.Transparent;
-            this.Lbl_NormalAmount.Location = new System.Drawing.Point(347, 330);
-            this.Lbl_NormalAmount.Name = "Lbl_NormalAmount";
-            this.Lbl_NormalAmount.Size = new System.Drawing.Size(57, 15);
-            this.Lbl_NormalAmount.TabIndex = 7;
-            this.Lbl_NormalAmount.Text = "양품 수";
-            // 
-            // Lbl_DefectAmount
-            // 
-            this.Lbl_DefectAmount.AutoSize = true;
-            this.Lbl_DefectAmount.BackColor = System.Drawing.Color.Transparent;
-            this.Lbl_DefectAmount.Location = new System.Drawing.Point(332, 360);
-            this.Lbl_DefectAmount.Name = "Lbl_DefectAmount";
-            this.Lbl_DefectAmount.Size = new System.Drawing.Size(72, 15);
-            this.Lbl_DefectAmount.TabIndex = 8;
-            this.Lbl_DefectAmount.Text = "불량품 수";
             // 
             // Txt_DefectAmount
             // 
@@ -216,22 +155,13 @@
             // 
             // Btn_OrderStart
             // 
+            this.Btn_OrderStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Btn_OrderStart.Location = new System.Drawing.Point(864, 127);
             this.Btn_OrderStart.Name = "Btn_OrderStart";
             this.Btn_OrderStart.Size = new System.Drawing.Size(158, 46);
             this.Btn_OrderStart.TabIndex = 18;
             this.Btn_OrderStart.Text = "작업개시";
             this.Btn_OrderStart.UseVisualStyleBackColor = true;
-            // 
-            // Lbl_Dies
-            // 
-            this.Lbl_Dies.AutoSize = true;
-            this.Lbl_Dies.BackColor = System.Drawing.Color.Transparent;
-            this.Lbl_Dies.Location = new System.Drawing.Point(570, 237);
-            this.Lbl_Dies.Name = "Lbl_Dies";
-            this.Lbl_Dies.Size = new System.Drawing.Size(87, 15);
-            this.Lbl_Dies.TabIndex = 19;
-            this.Lbl_Dies.Text = "금형 이미지";
             // 
             // Pic_Dies
             // 
@@ -249,16 +179,6 @@
             this.Txt_TargetAmount.Size = new System.Drawing.Size(100, 25);
             this.Txt_TargetAmount.TabIndex = 22;
             // 
-            // Lbl_TargetAmount
-            // 
-            this.Lbl_TargetAmount.AutoSize = true;
-            this.Lbl_TargetAmount.BackColor = System.Drawing.Color.Transparent;
-            this.Lbl_TargetAmount.Location = new System.Drawing.Point(133, 330);
-            this.Lbl_TargetAmount.Name = "Lbl_TargetAmount";
-            this.Lbl_TargetAmount.Size = new System.Drawing.Size(87, 15);
-            this.Lbl_TargetAmount.TabIndex = 21;
-            this.Lbl_TargetAmount.Text = "목표 생산량";
-            // 
             // Tim_Per3Sec
             // 
             this.Tim_Per3Sec.Interval = 3000;
@@ -269,8 +189,98 @@
             this.Tab_Data.Location = new System.Drawing.Point(52, 434);
             this.Tab_Data.Name = "Tab_Data";
             this.Tab_Data.SelectedIndex = 0;
-            this.Tab_Data.Size = new System.Drawing.Size(1084, 393);
+            this.Tab_Data.Size = new System.Drawing.Size(601, 393);
             this.Tab_Data.TabIndex = 24;
+            // 
+            // Pic_Order
+            // 
+            this.Pic_Order.BackColor = System.Drawing.Color.Transparent;
+            this.Pic_Order.Location = new System.Drawing.Point(151, 197);
+            this.Pic_Order.Name = "Pic_Order";
+            this.Pic_Order.Size = new System.Drawing.Size(79, 19);
+            this.Pic_Order.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Pic_Order.TabIndex = 25;
+            this.Pic_Order.TabStop = false;
+            // 
+            // Pic_ItemCode
+            // 
+            this.Pic_ItemCode.BackColor = System.Drawing.Color.Transparent;
+            this.Pic_ItemCode.Location = new System.Drawing.Point(151, 237);
+            this.Pic_ItemCode.Name = "Pic_ItemCode";
+            this.Pic_ItemCode.Size = new System.Drawing.Size(80, 20);
+            this.Pic_ItemCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Pic_ItemCode.TabIndex = 26;
+            this.Pic_ItemCode.TabStop = false;
+            // 
+            // Pic_ItemName
+            // 
+            this.Pic_ItemName.BackColor = System.Drawing.Color.Transparent;
+            this.Pic_ItemName.Location = new System.Drawing.Point(150, 277);
+            this.Pic_ItemName.Name = "Pic_ItemName";
+            this.Pic_ItemName.Size = new System.Drawing.Size(80, 20);
+            this.Pic_ItemName.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Pic_ItemName.TabIndex = 27;
+            this.Pic_ItemName.TabStop = false;
+            // 
+            // Pic_Proc
+            // 
+            this.Pic_Proc.BackColor = System.Drawing.Color.Transparent;
+            this.Pic_Proc.Location = new System.Drawing.Point(573, 196);
+            this.Pic_Proc.Name = "Pic_Proc";
+            this.Pic_Proc.Size = new System.Drawing.Size(80, 20);
+            this.Pic_Proc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Pic_Proc.TabIndex = 28;
+            this.Pic_Proc.TabStop = false;
+            // 
+            // Pic_TargetAmount
+            // 
+            this.Pic_TargetAmount.BackColor = System.Drawing.Color.Transparent;
+            this.Pic_TargetAmount.Location = new System.Drawing.Point(128, 325);
+            this.Pic_TargetAmount.Name = "Pic_TargetAmount";
+            this.Pic_TargetAmount.Size = new System.Drawing.Size(80, 20);
+            this.Pic_TargetAmount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Pic_TargetAmount.TabIndex = 29;
+            this.Pic_TargetAmount.TabStop = false;
+            // 
+            // Pic_TotalAmount
+            // 
+            this.Pic_TotalAmount.BackColor = System.Drawing.Color.Transparent;
+            this.Pic_TotalAmount.Location = new System.Drawing.Point(128, 356);
+            this.Pic_TotalAmount.Name = "Pic_TotalAmount";
+            this.Pic_TotalAmount.Size = new System.Drawing.Size(80, 20);
+            this.Pic_TotalAmount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Pic_TotalAmount.TabIndex = 30;
+            this.Pic_TotalAmount.TabStop = false;
+            // 
+            // Pic_NormalAmount
+            // 
+            this.Pic_NormalAmount.BackColor = System.Drawing.Color.Transparent;
+            this.Pic_NormalAmount.Location = new System.Drawing.Point(332, 330);
+            this.Pic_NormalAmount.Name = "Pic_NormalAmount";
+            this.Pic_NormalAmount.Size = new System.Drawing.Size(80, 20);
+            this.Pic_NormalAmount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Pic_NormalAmount.TabIndex = 31;
+            this.Pic_NormalAmount.TabStop = false;
+            // 
+            // Pic_DefectAmount
+            // 
+            this.Pic_DefectAmount.BackColor = System.Drawing.Color.Transparent;
+            this.Pic_DefectAmount.Location = new System.Drawing.Point(332, 361);
+            this.Pic_DefectAmount.Name = "Pic_DefectAmount";
+            this.Pic_DefectAmount.Size = new System.Drawing.Size(80, 20);
+            this.Pic_DefectAmount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Pic_DefectAmount.TabIndex = 32;
+            this.Pic_DefectAmount.TabStop = false;
+            // 
+            // Pic_DieLbl
+            // 
+            this.Pic_DieLbl.BackColor = System.Drawing.Color.Transparent;
+            this.Pic_DieLbl.Location = new System.Drawing.Point(573, 242);
+            this.Pic_DieLbl.Name = "Pic_DieLbl";
+            this.Pic_DieLbl.Size = new System.Drawing.Size(80, 20);
+            this.Pic_DieLbl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Pic_DieLbl.TabIndex = 33;
+            this.Pic_DieLbl.TabStop = false;
             // 
             // FRM_Process
             // 
@@ -278,11 +288,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1258, 973);
+            this.Controls.Add(this.Pic_DieLbl);
+            this.Controls.Add(this.Pic_DefectAmount);
+            this.Controls.Add(this.Pic_NormalAmount);
+            this.Controls.Add(this.Pic_TotalAmount);
+            this.Controls.Add(this.Pic_TargetAmount);
+            this.Controls.Add(this.Pic_Proc);
+            this.Controls.Add(this.Pic_ItemName);
+            this.Controls.Add(this.Pic_ItemCode);
+            this.Controls.Add(this.Pic_Order);
             this.Controls.Add(this.Tab_Data);
             this.Controls.Add(this.Txt_TargetAmount);
-            this.Controls.Add(this.Lbl_TargetAmount);
             this.Controls.Add(this.Pic_Dies);
-            this.Controls.Add(this.Lbl_Dies);
             this.Controls.Add(this.Btn_OrderStart);
             this.Controls.Add(this.Txt_CurrentTime);
             this.Controls.Add(this.Cmb_Machine);
@@ -293,13 +310,6 @@
             this.Controls.Add(this.Txt_TotalAmount);
             this.Controls.Add(this.Txt_NormalAmount);
             this.Controls.Add(this.Txt_DefectAmount);
-            this.Controls.Add(this.Lbl_DefectAmount);
-            this.Controls.Add(this.Lbl_NormalAmount);
-            this.Controls.Add(this.Lbl_TotalAmount);
-            this.Controls.Add(this.Lbl_ItemName);
-            this.Controls.Add(this.Lbl_ItemCode);
-            this.Controls.Add(this.Lbl_Proc);
-            this.Controls.Add(this.Lbl_Order);
             this.Controls.Add(this.Lbl_CurrentTime);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -310,6 +320,15 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_Process_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Pic_Dies)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_Order)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_ItemCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_ItemName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_Proc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_TargetAmount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_TotalAmount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_NormalAmount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_DefectAmount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pic_DieLbl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,13 +337,6 @@
         #endregion
 
         private System.Windows.Forms.Label Lbl_CurrentTime;
-        private System.Windows.Forms.Label Lbl_Order;
-        private System.Windows.Forms.Label Lbl_Proc;
-        private System.Windows.Forms.Label Lbl_ItemCode;
-        private System.Windows.Forms.Label Lbl_ItemName;
-        private System.Windows.Forms.Label Lbl_TotalAmount;
-        private System.Windows.Forms.Label Lbl_NormalAmount;
-        private System.Windows.Forms.Label Lbl_DefectAmount;
         private System.Windows.Forms.TextBox Txt_DefectAmount;
         private System.Windows.Forms.TextBox Txt_NormalAmount;
         private System.Windows.Forms.TextBox Txt_TotalAmount;
@@ -336,11 +348,18 @@
         private System.Windows.Forms.TextBox Txt_CurrentTime;
         private System.Windows.Forms.Timer Tim_PerSec;
         private System.Windows.Forms.Button Btn_OrderStart;
-        private System.Windows.Forms.Label Lbl_Dies;
         private System.Windows.Forms.PictureBox Pic_Dies;
         private System.Windows.Forms.TextBox Txt_TargetAmount;
-        private System.Windows.Forms.Label Lbl_TargetAmount;
         private System.Windows.Forms.Timer Tim_Per3Sec;
         private System.Windows.Forms.TabControl Tab_Data;
+        private System.Windows.Forms.PictureBox Pic_Order;
+        private System.Windows.Forms.PictureBox Pic_ItemCode;
+        private System.Windows.Forms.PictureBox Pic_ItemName;
+        private System.Windows.Forms.PictureBox Pic_Proc;
+        private System.Windows.Forms.PictureBox Pic_TargetAmount;
+        private System.Windows.Forms.PictureBox Pic_TotalAmount;
+        private System.Windows.Forms.PictureBox Pic_NormalAmount;
+        private System.Windows.Forms.PictureBox Pic_DefectAmount;
+        private System.Windows.Forms.PictureBox Pic_DieLbl;
     }
 }
