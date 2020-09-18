@@ -30,6 +30,27 @@
 		1차적인 이미지 적용 완료
 		화면 크기에 맞춘 크기, 위치 조절 완료
 
-	FRM_Main, FRM_Process도 화면에 맞춰 크기 조절을 할 수 있도록 수정해야함
+	FRM_Process도 화면에 맞춰 크기 조절을 할 수 있도록 수정해야함
 	(Main의 경우 Mdi Container의 크기 수정을 위한 함수를 FormLayout Class에 추가해야함)
 	(KeyBoard와 NumPad도 할 수 있으면 좋겠지만 노가다가 동반될 것임)
+
+2020-09-17
+	전체
+		속성으로 지정해둔 배경 이미지를 코드를 통해 할당하도록 변경함
+		(배경을 원하는대로 변경할 수 있게됨)
+	FRM_Main
+		화면에 맞춘 크기, 위치 조절 완료
+		ini파일을 통한 창 크기 조절 지원
+	FRM_Process
+		화면에 맞춘 크기, 위치 조절 완료
+		배경 이미지 할당
+		차트 추가
+		(품질 체크 항목별로 TabControl에 Tab을 생성해 각각 Chart로 표현하며 StripLine을 이용해 품질 경계 영역을 표시함)
+		(품질 범위를 넘어서면 탭 이름을 붉게 할 수 있도록 준비를 해둠)
+		(매 갱신마다 점을 전부 지우고 다시 그리는 식으로 일단 구현해 놓았지만 점을 하나 지우고 하나 새로 그리는 식의 구현을 하는게 목표)
+	CMN_Layout
+		FormLayout Class 삭제 및 ControlLayout Class에 병합
+		(Form도 Control의 일종이었음)
+	FRM_MessageBox
+		YesNo모드를 추가 구현
+		(Yes No버튼의 이미지는 할당을 안했으므로 해줘야함)

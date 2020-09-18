@@ -70,10 +70,8 @@ namespace SmartFactoryProject_Final.Common
             // 텍스트 삭제 작업 & 테두리 둥글게 하는 작업을 수행
             // 텍스트는 개발 환경에서의 버튼간 구분을 쉽게 하기 위해 넣었으며
             //   실제 실행시에는 이미지와 겹쳐 안좋게 보이므로 실행시에는 삭제해야함
-            FormLayout frmLayout = new FormLayout();
-            frmLayout.MakeCurvedBorder(this, 18, 18);
-
             ControlLayout ctrlLayout = new ControlLayout();
+            ctrlLayout.MakeCurvedBorder(this, 18, 18);
             foreach (Button btn in btnList_Digit)
             {
                 btn.Text = "";
@@ -94,9 +92,7 @@ namespace SmartFactoryProject_Final.Common
             ctrlLayout.MakeCurvedBorder(Btn_Key_Enter, 24, 24);
             Btn_Exit.Text = "";
             ctrlLayout.MakeCurvedBorder(Btn_Exit, 12, 12);
-            Txt_Input.Text = "";
             ctrlLayout.MakeCurvedBorder(Txt_Input, 15, 15);
-
         }
 
         private void Btn_Key_Click(object sender, EventArgs e)
@@ -326,6 +322,7 @@ namespace SmartFactoryProject_Final.Common
                 Btn_Key_0.BackgroundImage = Image.FromFile(keyPadResPath + @"\n0.png");
                 Btn_Key_Bar.BackgroundImage = Image.FromFile(keyPadResPath + @"\n_bar.png");
             }
+            this.BackgroundImage = Image.FromFile(keyPadResPath + @"\bg_num.png");
             Btn_Key_BackSpace.BackgroundImage = Image.FromFile(keyPadResPath + @"\n_arrow.png");
             Btn_Key_Enter.BackgroundImage = Image.FromFile(keyPadResPath + @"\n_enter.png");
             Btn_Exit.BackgroundImage = Image.FromFile(keyPadResPath + @"\n_exit.png");

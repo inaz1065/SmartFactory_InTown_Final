@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_NumPadUI));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Btn_Key_Enter = new System.Windows.Forms.Button();
             this.Btn_Key_BackSpace = new System.Windows.Forms.Button();
@@ -309,7 +308,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(268, 531);
             this.ControlBox = false;

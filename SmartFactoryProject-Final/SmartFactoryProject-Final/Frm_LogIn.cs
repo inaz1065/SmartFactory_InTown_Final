@@ -28,9 +28,14 @@ namespace SmartFactoryProject_Final
 
         private void SetLayout()
         {
-            FormLayout frmLayout = new FormLayout();
-            frmLayout.MakeCurvedBorder(this, 18, 18);
+            IniFile ini = new IniFile();
+            ini.Load(IniData.SettingIniFile);
+            IniSection resSect = ini["Resources"];
+            string bgResPath = System.IO.Directory.GetCurrentDirectory() + $@"{resSect["ResourceFolder"]}{resSect["BGFolder"]}";
+            
+            this.BackgroundImage = Image.FromFile(bgResPath + @"\bg_tabpage.png");
             ControlLayout ctrlLayout = new ControlLayout();
+            ctrlLayout.MakeCurvedBorder(this, 18, 18);
             ctrlLayout.Control_Sizing(Lbl_ID, this.Size, 0.1f, 0.1f);
             ctrlLayout.Control_Positioning(Lbl_ID, this.Size, 0.1f, 0.4f);
             ctrlLayout.Control_Sizing(Lbl_PW, this.Size, 0.1f, 0.1f);

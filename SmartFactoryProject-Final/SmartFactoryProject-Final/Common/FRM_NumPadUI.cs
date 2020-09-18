@@ -69,6 +69,7 @@ namespace SmartFactoryProject_Final.Common
             Btn_Key_8.BackgroundImage = Image.FromFile(keyPadResPath + @"\n8.png");
             Btn_Key_9.BackgroundImage = Image.FromFile(keyPadResPath + @"\n9.png");
             Btn_Key_0.BackgroundImage = Image.FromFile(keyPadResPath + @"\n0.png");
+            this.BackgroundImage = Image.FromFile(keyPadResPath + @"\bg_num.png");
             Btn_Key_BackSpace.BackgroundImage = Image.FromFile(keyPadResPath + @"\n_arrow.png");
             Btn_Key_Enter.BackgroundImage = Image.FromFile(keyPadResPath + @"\n_enter.png");
             Btn_Exit.BackgroundImage = Image.FromFile(keyPadResPath + @"\n_exit.png");

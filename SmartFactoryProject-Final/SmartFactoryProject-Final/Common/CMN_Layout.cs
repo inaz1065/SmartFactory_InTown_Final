@@ -42,6 +42,7 @@ namespace SmartFactoryProject_Final.Common
         }
 
         public enum HorizontalSiding { Left, Center, Right }
+        public enum VerticalSiding { Top, Center, Bottom }
         /// <summary>
         /// 화면의 x비율, y비율에 맞춰서 컨트롤의 위치를 옮기는 함수
         /// </summary>
@@ -49,10 +50,12 @@ namespace SmartFactoryProject_Final.Common
         /// <param name="formSize">화면의 크기</param>
         /// <param name="xPosRatio">화면에서 컨트롤이 위치할 x좌표의 비율(0~1)</param>
         /// <param name="yPosRatio">화면에서 컨트롤이 위치할 y좌표의 비율(0~1)</param>
-        /// <param name="horizontalSiding">x,y좌표를 컨트롤의 좌측, 중앙, 우측 어느곳을 기준으로 맞추는가를 나타냄</param>
+        /// <param name="horizontalSiding">x좌표의 비율이 컨트롤의 좌측, 중앙, 우측 중 어느곳을 기준으로 하는가를 나타낸다</param>
+        /// <param name="verticalSiding">y좌표의 비율이 컨트롤의 상단, 중앙, 하단 중 어느곳을 기준으로 하는가를 나타낸다</param>
         public void Control_Positioning(Control control, Size formSize,
                                         float xPosRatio, float yPosRatio,
-                                        HorizontalSiding horizontalSiding = HorizontalSiding.Center)
+                                        HorizontalSiding horizontalSiding = HorizontalSiding.Center,
+                                        VerticalSiding verticalSiding = VerticalSiding.Center)
         {
             if (IsInRange(xPosRatio, 0, 1) &&
                 IsInRange(yPosRatio, 0, 1))
@@ -63,39 +66,56 @@ namespace SmartFactoryProject_Final.Common
                 int controlXHalf = control.Size.Width / 2;
                 int controlYHalf = control.Size.Height / 2;
 
+                int xpoint = 0, ypoint = 0;
                 switch (horizontalSiding)
                 {
                     case HorizontalSiding.Left:
-                        control.Location = new Point(xCenter, yCenter - controlYHalf);
+                        xpoint = xCenter;
                         break;
                     case HorizontalSiding.Center:
-                        control.Location = new Point(xCenter - controlXHalf,
-                                                     yCenter - controlYHalf);
+                        xpoint = xCenter - controlXHalf;
                         break;
                     case HorizontalSiding.Right:
-                        control.Location = new Point(xCenter - (controlXHalf * 2),
-                                                     yCenter - controlYHalf);
+                        xpoint = xCenter - (controlXHalf * 2);
                         break;
                 }
+
+                switch (verticalSiding)
+                {
+                    case VerticalSiding.Top:
+                        ypoint = yCenter;
+                        break;
+                    case VerticalSiding.Center:
+                        ypoint = yCenter - controlYHalf;
+                        break;
+                    case VerticalSiding.Bottom:
+                        ypoint = yCenter - (controlYHalf * 2);
+                        break;
+                }
+
+                control.Location = new Point(xpoint, ypoint);
             }
         }
-        
-        private bool IsInRange(float num, int min, int max)
+
+        public int GetXPosByRatio(Size size, float xRatio)
+        {
+            if (IsInRange(xRatio, 0, 1))
+                return (int)(size.Width * xRatio);
+            else
+                return -1;
+        }
+
+        public int GetYPosByRatio(Size size, float yRatio)
+        {
+            if (IsInRange(yRatio, 0, 1))
+                return (int)(size.Height * yRatio);
+            else
+                return -1;
+        }
+
+        private bool IsInRange(float num, float min, float max)
         {
             return num >= min && num <= max;
-        }
-    }
-
-    class FormLayout
-    {
-        [DllImport("gdi32.dll")]
-        private static extern IntPtr CreateRoundRectRgn(int x1, int y1, int x2, int y2, int cx, int cy);
-        [DllImport("user32.dll")]
-        private static extern int SetWindowRgn(IntPtr hWnd, IntPtr hRgn, bool bRedraw);
-        public void MakeCurvedBorder(Form frm, int curveAmount_X, int curveAmount_Y)
-        {
-            IntPtr ip = CreateRoundRectRgn(0, 0, frm.Width, frm.Height, curveAmount_X, curveAmount_Y);
-            frm.Region = Region.FromHrgn(ip);
         }
     }
 }
